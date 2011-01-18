@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+NAMED_PATH="/var/named/master";
+LOCAL_BACKUP_PATH="/tmp/named_backup"
