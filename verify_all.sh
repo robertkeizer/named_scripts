@@ -2,10 +2,10 @@
 BINPATH=`echo $0 | sed 's/\/verify_all.sh//'`;
 source "$BINPATH/vars";
 echo "Starting to check zone files..";
-for location in internal; do
+for location in internal external; do
 	for file in `ls $NAMED_PATH/$location/ | grep \.zone\.db$`; do
 		domain=`echo $file | sed 's/\.zone\.db//'`;
-		echo -n "$domain ";
+		echo -n "$location: $domain ";
 		if [ "`$BINPATH/verify_good.sh $location $domain | tail -1`" == "OK" ]; then
 			echo "okay.";
 		else
