@@ -21,7 +21,7 @@ for master_slave in $MASTER_SLAVE; do
 done;
 
 echo -n "named config ...";
-named-checkconf -t /var/named >/dev/null 2>&1;
+named-checkconf -t $NAMED_PATH >/dev/null 2>&1;
 if [ $? -ne 0 ]; then
 	echo " failed.";
 	exit 1;
