@@ -6,7 +6,7 @@ source $NAMED_SCRIPTS/vars;
 for master_slave in $MASTER_SLAVE; do
 	for location in `ls $NAMED_PATH/$master_slave | egrep "$LOCATION_REGEX"`; do
 		for file in `ls $NAMED_PATH/$master_slave/$location/ | egrep "$FILE_REGEX"`; do
-			domain="`echo $file | sed 's/\.zone\.db$//'`";
+			domain="`echo $file | sed 's/$FILE_REGEX//'`";
 
 			echo -n "$location: $domain ... ";
 			named-checkzone -t $NAMED_PATH $domain /$master_slave/$location/$file >/dev/null 2>&1
