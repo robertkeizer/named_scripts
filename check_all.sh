@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-vars="`echo $0 | sed 's/check_all.sh/vars/'`";
-source $vars;
+NAMED_SCRIPTS="`echo $0 | sed 's/check_all.sh//'`";
+source $NAMED_SCRIPTS/vars;
 
 # Check the zones..
 for master_slave in $MASTER_SLAVE; do
