@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
-NAMED_PATH="/var/named/master";
-LOCAL_BACKUP_PATH="/tmp/named_backup"
+NAMED_PATH="/var/named";
+MASTER_SLAVE="master slave";
+LOCATION_REGEX="^(internal|external|both)$";
+FILE_REGEX="\.zone\.db$";
+
+REMOTE_USER="";
+REMOTE_SERVER="";
+REMOTE_PORT="";
+REMOTE_KEY="";
